@@ -55,7 +55,8 @@ class UsersController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $item = User::find($id);
+        return view('modules/users/edit', compact('item'));
     }
 
     /**
@@ -63,7 +64,11 @@ class UsersController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $item = User::find($id);
+    //  Campo de BD   Valor del input que viene del form
+        $item->name = $request->name;
+        $item->save();
+        return to_route('index');
     }
 
     /**

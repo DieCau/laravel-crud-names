@@ -29,8 +29,8 @@
                                                 <a href="{{ route('show', $item->id) }}" class="btn btn-info"><i
                                                         class="fa-solid fa-list-check"></i>
                                                     Show List</a>
-                                                <a href="" class="btn btn-warning"><i
-                                                        class="fa-regular fa-pen-to-square"></i> Edit List</a>
+                                                <a href="{{ route('edit', $item->id) }}" class="btn btn-warning"><i
+                                                        class="fa-regular fa-pen-to-square"></i> Edit</a>
                                                 <button class="btn btn-danger"><i class="fa-solid fa-trash"></i>
                                                     Delete</button>
                                             </form>
