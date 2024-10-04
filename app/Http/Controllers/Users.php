@@ -7,15 +7,15 @@ use Illuminate\Http\Request;
 class Users extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Mostrar un listado de recursos.
      */
     public function index()
     {
-        //
+        return view('modules/users/index');
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Crear un nuevo recurso
      */
     public function create()
     {
