@@ -12,7 +12,10 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return view('modules/users/index');
+        // Utilizar Paginacion
+        $items = User::paginate(2);
+        // Retorna vista con el parametro items sin la "$"
+        return view('modules/users/index', compact('items'));
     }
 
     /**
