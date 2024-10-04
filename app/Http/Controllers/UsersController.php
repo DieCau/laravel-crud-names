@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class Users extends Controller
+class UsersController extends Controller
 {
     /**
      * Mostrar un listado de recursos.
@@ -19,7 +20,8 @@ class Users extends Controller
      */
     public function create()
     {
-        //
+        // Retorna una vista
+        return view('modules/users/create');
     }
 
     /**
@@ -27,7 +29,13 @@ class Users extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $item = new User();
+    //  Campo vacio   Valor del input que viene del form
+        $item->name = $request->name;
+    //  Guardar en BD
+        $item->save();
+    //  Redireccionar a 'index' una vez que se guardo
+        return to_route('index');
     }
 
     /**
