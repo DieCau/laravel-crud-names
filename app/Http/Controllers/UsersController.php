@@ -72,10 +72,12 @@ class UsersController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Elimina el recurso especificado de la DB.
      */
     public function destroy(string $id)
     {
-        //
+        $item = User::find($id);
+        $item->delete();
+        return to_route('index');
     }
 }

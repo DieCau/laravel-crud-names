@@ -17,6 +17,6 @@ Route::get('/edit/{id}', [UsersController::class, 'edit'])->name('edit');
 
 Route::put('/update/{id}', [UsersController::class, 'update'])->name('update');
 
-Route::delete('/destroy', [UsersController::class, 'destroy'])->name('destroy');
+Route::delete('/destroy/{id}', [UsersController::class, 'destroy'])->name('destroy');
 
 
