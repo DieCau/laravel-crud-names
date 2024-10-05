@@ -40,7 +40,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td>There is no Data in the Database...</td>
+                                        <td>Not Data in the Database...</td>
                                     </tr>
                                 @endforelse
                             </tbody>
