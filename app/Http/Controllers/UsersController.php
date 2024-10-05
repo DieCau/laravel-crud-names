@@ -78,6 +78,6 @@ class UsersController extends Controller
     {
         $item = User::find($id);
         $item->delete();
-        return to_route('index');
+        return to_route('index')->with('delete', 'ok');
     }
 }

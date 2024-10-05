@@ -25,15 +25,15 @@
                                         <td>{{ $item->id }}</td>
                                         <td>{{ $item->name }}</td>
                                         <td>
-                                            <form action="{{ route('destroy', $item->id) }}" method="post">
-                                                @csrf
+                                            <form action="{{ route('destroy', $item->id) }}" class="form-delete" method='POST'>
                                                 @method('DELETE')
+                                                @csrf
                                                 <a href="{{ route('show', $item->id) }}" class="btn btn-info"><i
                                                         class="fa-solid fa-list-check"></i>
                                                     Show List</a>
                                                 <a href="{{ route('edit', $item->id) }}" class="btn btn-warning"><i
                                                         class="fa-regular fa-pen-to-square"></i> Edit</a>
-                                                <button class="btn btn-danger"><i class="fa-solid fa-trash"></i>
+                                                <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i>
                                                     Delete</button>
                                             </form>
                                         </td>
@@ -53,4 +53,40 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('js')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if (session('delete') == 'ok')
+        <script>
+            Swal.fire({
+                title: "Deleted!",
+                text: "Your register has been deleted.",
+                icon: "success"
+            });
+        </script>
+    @endif
+
+
+    <script>
+
+        $('.form-delete').submit(function(e) {
+            e.preventDefault();
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.value) {
+                    this.submit();
+                }
+            });
+        });
+    </script>
 @endsection
