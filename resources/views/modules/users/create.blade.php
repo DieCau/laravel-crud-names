@@ -6,6 +6,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-body">
+                    {{-- Create new user --}}
                     <form action="{{ route('store') }}" method="post">
                         @csrf
                         @method('POST')

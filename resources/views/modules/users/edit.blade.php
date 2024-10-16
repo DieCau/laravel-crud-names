@@ -1,6 +1,7 @@
 @extends('layouts/main')
 
 <div class="container mt-4">
+    {{-- Edit View --}}
     <h2>Edit User</h2>
     <div class="row">
         <div class="col">

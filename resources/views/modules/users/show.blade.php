@@ -6,6 +6,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-body">
+                    {{-- Show Table --}}
                     <table class="table table-sm text-center">
                         <thead>
                             <tr>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
+// Routes
 //        path    controller    metodo       nombre de ruta
 //          |         |           |                  |
 Route::get('/', [UsersController::class, 'index'])->name('index');
